@@ -1,0 +1,5 @@
+---
+- name: Hardening with ansible
+  hosts: aws
+  roles:
+     - cilsy
