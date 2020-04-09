@@ -1,7 +1,16 @@
 # How to work
-Install vagrant and virtualbox
+* Install vagrant and virtualbox
+> or
+* creata instace aws
+* make sure your workspace can ssh to vm or instance
 
-
+# configuration
+edit file hosts
+```
+nano hosts
+```
+edit file .yml
+* read : https://docs.ansible.com/ansible/latest/modules/list_of_all_modules.html
 # ansible
 git clone https://github.com/adisaputra10/ansible_playbook . <br>
 vagrant up && vagrant ssh <br>
