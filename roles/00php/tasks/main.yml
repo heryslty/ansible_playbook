@@ -1,0 +1,29 @@
+---
+
+- name: install php
+  apt:
+    pkg:
+      - php7.2
+      - php7.2-fpm
+      - php-mysql
+    state: present 
+    update_cache: true
+  become: true
+
+
+- name : git clone
+  git:
+    repo: https://github.com/sdcilsy/sosial-media.git
+    dest: /var/www/html/sosial-media-master
+  become: true
+  notify: Reload service NGINX
+
+#- name: copy file pesbuk
+#  copy:
+#    src: /tmp/sosial-media-master
+#    dest: /var/www/html/.
+#    owner: ubuntu
+#    group: ubuntu
+#    mode: u=rw,g=rw,o=r
+#  become: true
+#  notify: Reload service NGINX

@@ -1,0 +1,18 @@
+---
+
+- name: install nginx
+  apt:
+    pkg: nginx
+    state: present 
+    update_cache: true
+  become: true
+  notify:
+    - Reload service NGINX
+
+- name: Config service nginx
+  template:
+   src: default
+   dest: /etc/nginx/sites-enabled/default
+   mode: 0755
+  become: true
+

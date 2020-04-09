@@ -2,4 +2,5 @@
 - name: Hardening with ansible
   hosts: aws
   roles:
-     - 00cilsy
+     - 00nginx
+     - 00php
