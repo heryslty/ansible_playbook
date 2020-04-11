@@ -1,0 +1,19 @@
+---
+- name: Stop ec2 instances
+  hosts: localhost
+  gather_facts: false
+  vars:
+    instance_ids:
+      - 'i-04ef89809322becb9'
+      - 'i-01e35874ce7ccc568'
+      - 'i-0aa494910fac44f42'
+    region: ap-southeast-1
+  tasks:
+    - name: Stop the ec2 instances
+      ec2:
+        instance_ids: '{{ instance_ids }}'
+        region: '{{ region }}'
+        state: stopped
+        wait: True
+        vpc_subnet_id: subnet-e803fa8e
+        assign_public_ip: yes

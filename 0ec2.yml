@@ -1,0 +1,6 @@
+---
+  - name: Hardening with ansible
+    hosts: localhost
+    roles:
+       - 00aws
+  

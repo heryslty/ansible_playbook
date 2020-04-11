@@ -1,0 +1,28 @@
+---
+
+- name: create EC2
+  ec2:
+    instance_tags:
+        Name: create-from-ansible3
+    #sesuaikan key-pair
+    key_name: Hery
+    #sesuaikan jenis intance
+    instance_type: t2.micro
+    #sesuaikan Image
+    image: ami-09a4a9ce71ff3f20b
+    wait: yes
+    volumes:
+      - device_name: /dev/xvda
+        volume_type: gp2
+        #sesuaikan brp Gb volume
+        volume_size: 8
+        delete_on_termination: true
+    #group-roles
+    group: default
+    #sesuaikan jumlah
+    count: 1
+    #sesuaikan Subnet
+    vpc_subnet_id: subnet-e803fa8e
+    assign_public_ip: yes
+    #sesuaikan region
+    region: ap-southeast-1

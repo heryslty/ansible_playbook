@@ -1,8 +1,0 @@
----
-
-- name: Install a list of packages
-  apt:
-    pkg:
-    - htop
-#    update_cache: true
-  become: true

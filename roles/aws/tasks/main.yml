@@ -1,0 +1,7 @@
+---
+
+  - include: create-ec2.yml
+    when: env == "create-ec2"
+  
+  - include: state-ec2.yml.yml
+    when: env == "state-ec2.yml"
